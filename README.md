@@ -1,2 +1,2 @@
-# Tensorflow
-Deep Learning Zero to All - Tensorflow
+# TensorFlow
+Deep Learning Zero to All - TensorFlow
