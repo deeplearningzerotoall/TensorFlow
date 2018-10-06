@@ -16,7 +16,23 @@ Deep Learning Zero to All - TensorFlow
 
 4. session에서 추가 기능?
   - config option 주고 열자 (gpu 모두 점유 방지)
-  - earlystopping?
-  - tensorboard?
   
-5. 
+5. 파일을 하나로 할 것인가? 몇개로 한 것인가?
+  - ipynb는 1개로 제작하자
+  - py는 제한은 없다.
+
+6. tf.keras.layer + session으로 시작하자
+  - 희망이나 추가로 샘플 estimator는 향후 추가 or not
+  
+7. 학습이 멈추는 조건을 어떻게 할 것인가?
+ - Epoch로 조정
+ - Ealrystopping
+ - 특정 Condition (loss, acc, perplexity ....)
+ 의견1. 내용의 스타일에 따라 걸어도 되고 안해도 되고 (주로 복잡한 코드에 적용)
+
+8. Tensorboard
+ - 모든 코드에 굳이 넣을 필요는 없고, 기존 코드에 설명을 최신으로 추가\
+ 
+9. name_scope vs. variable_scope
+  - variable_scope은 2.0에서 사리진다고 함.
+  - 추가 조사 필요 (keras에서 따로 control 하는게 있는가?)
