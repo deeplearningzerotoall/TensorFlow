@@ -2,6 +2,7 @@
 Deep Learning Zero to All - TensorFlow
 
 **Code Convention (10/7)**
+Tensorflow 공식 홈페이지 가이드 따라하기: https://www.tensorflow.org/community/style_guide
 
 1. Variable: **rnn_layer** / rnnLayer
 
@@ -10,7 +11,8 @@ Deep Learning Zero to All - TensorFlow
   진원님: CS20에 나오는 코드 샘플 (링크 공유, 전처리 tf.data 스타일은 우선은 이 스타일로)
   보섭님: 향후에 Estimator까지 포함하는 형태의 코드이면 좋겠다.
 
-  데이터셋: train / validation / test
+  데이터셋: train / validation
+  추가로 모델을 불러서 test셋으로 예측하고 보는법 내용 추가
 
 3. 전처리나 이쪽은 tf.keras쪽을 활용하자 (raw 스타일로 짜는거는 지양)
 
@@ -36,3 +38,6 @@ Deep Learning Zero to All - TensorFlow
 9. name_scope vs. variable_scope
   - variable_scope은 2.0에서 사리진다고 함.
   - 추가 조사 필요 (keras에서 따로 control 하는게 있는가?)
+  
+10. layer 여러개 쌓을 때?
+  - cnn_layer1, cnn_layer2 vs. cnn_layer
