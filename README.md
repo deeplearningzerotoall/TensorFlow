@@ -40,4 +40,4 @@ Tensorflow 공식 홈페이지 가이드 따라하기: https://www.tensorflow.or
   - 추가 조사 필요 (keras에서 따로 control 하는게 있는가?)
   
 10. layer 여러개 쌓을 때?
-  - cnn_layer1, cnn_layer2 vs. cnn_layer
+  - **cnn_layer1, cnn_layer2** vs. cnn_layer
