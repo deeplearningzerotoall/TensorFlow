@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM nvidia/cuda:9.2-cudnn7-devel-ubuntu18.04
 LABEL maintainer "June Oh <me@juneoh.net>"
 
 ENV TZ=Asia/Seoul
@@ -48,10 +48,10 @@ RUN echo "export PATH=/opt/conda/bin:\$PATH" > /etc/profile.d/conda.sh
 
 RUN pip install scipy scikit-learn pandas cython visdom
 
-RUN pip install tensorflow==1.11.0
+RUN pip install tensorflow-gpu==1.11.0
 
 RUN pip install --upgrade pip
-RUN rm -rf ~/.cache/pip
+RUN rm -rf ~/.ssh/pip
 
 ENV PYTHONUNBUFFERED=1
 WORKDIR /root
