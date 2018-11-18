@@ -53,7 +53,7 @@ def network(x, is_training=True, reuse=False) :
 
         for i in range(4) :
             x = tf.layers.dense(inputs=x, units=512, use_bias=True, kernel_initializer=xavier, name='fully_connected_' + str(i))
-            x = tf.layers.batch_normalization(inputs=x, training=is_training)
+            x = tf.layers.batch_normalization(inputs=x, training=is_training, name='batch_norm_' + str(i))
             x = tf.nn.relu(x)
 
         hypothesis = tf.layers.dense(inputs=x, units=10, use_bias=True, kernel_initializer=xavier, name='fully_connected_logit')
