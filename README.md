@@ -25,18 +25,18 @@ We always welcome your comments and pull requests.
 ------------------------------------
 
 ### 목차
-* Lab 01 - TensorFlow의 설치및 기본적인 operations (new)
-* Lec 02 - Linear Regression의 Hypothesis 와 cost 설명
-* Lab 02 - TensorFlow로 간단한 linear regression을 구현 (new)
-* Lec 03 - Linear Regression의 cost 최소화 알고리즘의 원리 설명
-* Lab 03 - Linear Regression 의 cost 최소화의 TensorFlow 구현 (new)
-* Lec 04 - multi-variable linear regression (*new)
+* Lab 01: TensorFlow의 설치및 기본적인 operations (new)
+* Lec 02: Linear Regression의 Hypothesis 와 cost 설명
+* Lab 02: TensorFlow로 간단한 linear regression을 구현 (new)
+* Lec 03: Linear Regression의 cost 최소화 알고리즘의 원리 설명
+* Lab 03: Linear Regression 의 cost 최소화의 TensorFlow 구현 (new)
+* Lec 04: multi-variable linear regression (*new)
 * Lab 04-1: multi-variable linear regression을 TensorFlow에서 구현하기 (new)
 * Lab 04-2: TensorFlow로 파일에서 데이타 읽어오기 (new)
 * Lec 5-1: Logistic Classification의 가설 함수 정의
-* Lec 5-2 Logistic Regression의 cost 함수 설명
+* Lec 5-2: Logistic Regression의 cost 함수 설명
 * Lab 05: TensorFlow로 Logistic Classification의 구현하기 (new)
-* Lec 6-1 - Softmax Regression: 기본 개념 소개
+* Lec 6-1: Softmax Regression: 기본 개념 소개
 * Lec 6-2: Softmax classifier 의 cost함수
 * Lab 06-1: TensorFlow로 Softmax Classification의 구현하기
 * Lab 06-2: TensorFlow로 Fancy Softmax Classification의 구현하기
@@ -57,9 +57,9 @@ We always welcome your comments and pull requests.
 * Lec 10-3: Dropout 과 앙상블
 * Lec 10-4: 레고처럼 넷트웍 모듈을 마음껏 쌓아 보자
 * Lab 10: NN, ReLu, Xavier, Dropout, and Adam
-* Lec 11-1 ConvNet의 Conv 레이어 만들기
+* Lec 11-1: ConvNet의 Conv 레이어 만들기
 * Lec 11-2: ConvNet Max pooling 과 Full Network
-* Lec 11-3 ConvNet의 활용예
+* Lec 11-3: ConvNet의 활용예
 * Lab 11-1: TensorFlow CNN Basics
 * Lab 11-2: MNIST 99% with CNN
 * Lab 11-3: CNN Class, Layers, Ensemble
