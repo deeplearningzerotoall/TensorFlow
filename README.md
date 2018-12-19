@@ -10,7 +10,7 @@ Sung Kim 교수님의 모두를 위한 딥러닝이 돌아왔습니다!
 
 수학이나 컴퓨터 공학적인 지식이 없이도 쉽게 볼수 있도록 만들려고 노력하였습니다
 
--김성훈(Sung Kim) 홍콩과기대 컴퓨터공학 교수
+- 홍콩과기대 컴퓨터공학 교수 김성훈(Sung Kim)
 
 ## TensorFlow
 Deep Learning Zero to All - TensorFlow
