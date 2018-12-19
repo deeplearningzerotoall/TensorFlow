@@ -18,7 +18,7 @@ pip install -r requirements.txt
 ```
 
 ## Contributions/Comments
-언제나 여러분들의 참여를 환영합니다. Comments나 pull requests를 남겨주세요
+언제나 여러분들의 참여를 환영합니다. Comments나 Pull requests를 남겨주세요
 
 We always welcome your comments and pull requests.
 
