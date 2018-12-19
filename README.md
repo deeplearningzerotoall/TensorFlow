@@ -7,7 +7,7 @@ Sung Kim 교수님의 모두의 딥러닝이 돌아왔습니다!
 ## TensorFlow
 Deep Learning Zero to All - TensorFlow
 
-그리고 여기는 TensorFlow 버전 Github 문서입니다.
+여기는 TensorFlow 버전 Github 문서입니다.
 
 현재는 Tensorflow 1.12(stable)를 기반으로 작성했으며 Tensorflow 2.0이 출시되는 대로 추후 반영할 예정입니다.
 
