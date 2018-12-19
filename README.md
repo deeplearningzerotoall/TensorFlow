@@ -59,8 +59,3 @@ Sung Kim 교수님의 모두의 딥러닝이 돌아왔습니다!
 * Lab 12-5: many to many variable bi-directional (simpled po-s-tagger training, bi-directional)
 * Lab 12-6: seq to seq (simple neural machine translation)
 * Lab 12-7: seq to seq with attention (simple neural machine translation, attention)
-* Lab 12-2: RNN - Hi Hello Training
-* Lab 12-3: Long Sequence RNN
-* Lab 12-4: Stacked RNN + Softmax Layer
-* Lab 12-5: Dynamic RNN
-* Lab 12-6: RNN with Time Series Data
