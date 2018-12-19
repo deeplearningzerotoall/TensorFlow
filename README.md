@@ -8,9 +8,9 @@ Sung Kim 교수님의 모두의 딥러닝이 돌아왔습니다!
 이 강의는 2016년 Sung Kim 교수님이 만드신 모두의 딥러닝의 후속작이자 개정판입니다
 
 ### 목차
-1. Lab 01 - TensorFlow의 설치및 기본적인 operations (new)
-2. Lec 02 - Linear Regression의 Hypothesis 와 cost 설명
-3. Lab 02 - TensorFlow로 간단한 linear regression을 구현 (new)
+* Lab 01 - TensorFlow의 설치및 기본적인 operations (new)
+* Lec 02 - Linear Regression의 Hypothesis 와 cost 설명
+* Lab 02 - TensorFlow로 간단한 linear regression을 구현 (new)
 Lec 03 - Linear Regression의 cost 최소화 알고리즘의 원리 설명
 Lab 03 - Linear Regression 의 cost 최소화의 TensorFlow 구현 (new)
 Lec 04 - multi-variable linear regression (*new)
