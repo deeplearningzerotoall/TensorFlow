@@ -66,7 +66,7 @@ Deep Learning Zero to All - TensorFlow
 
 ### 함께 만든 이들
 
-* Prof. Sung Kim (https://github.com/hunkim)
+* Prof. Kim (https://github.com/hunkim)
 * 김보섭 (https://github.com/aisolab)
 * 김수상 (https://github.com/healess)
 * 김준호 (https://github.com/taki0112)
