@@ -73,6 +73,7 @@ Deep Learning Zero to All - TensorFlow
 * 신성진 (https://github.com/aiscientist)
 * 이승준 (https://github.com/FinanceData)
 * 이진원 (https://github.com/jwlee-ml)
+* 오상준 (https://github.com/juneoh)
 * 네이버 커넥트재단 : 이효은, 장지수, 임우담
 
 
