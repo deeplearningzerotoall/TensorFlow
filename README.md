@@ -25,17 +25,17 @@ We always welcome your comments and pull requests.
 ------------------------------------
 
 ### 목차
-* Lab 01: TensorFlow의 설치및 기본적인 operations (new)
+* Lab 01: TensorFlow의 설치및 기본적인 operations
 * Lec 02: Linear Regression의 Hypothesis 와 cost 설명
-* Lab 02: TensorFlow로 간단한 linear regression을 구현 (new)
+* Lab 02: TensorFlow로 간단한 linear regression을 구현
 * Lec 03: Linear Regression의 cost 최소화 알고리즘의 원리 설명
-* Lab 03: Linear Regression 의 cost 최소화의 TensorFlow 구현 (new)
-* Lec 04: multi-variable linear regression (*new)
-* Lab 04-1: multi-variable linear regression을 TensorFlow에서 구현하기 (new)
-* Lab 04-2: TensorFlow로 파일에서 데이타 읽어오기 (new)
+* Lab 03: Linear Regression 의 cost 최소화의 TensorFlow 구현
+* Lec 04: multi-variable linear regression
+* Lab 04-1: multi-variable linear regression을 TensorFlow에서 구현하기
+* Lab 04-2: TensorFlow로 파일에서 데이타 읽어오기
 * Lec 5-1: Logistic Classification의 가설 함수 정의
 * Lec 5-2: Logistic Regression의 cost 함수 설명
-* Lab 05: TensorFlow로 Logistic Classification의 구현하기 (new)
+* Lab 05: TensorFlow로 Logistic Classification의 구현하기
 * Lec 6-1: Softmax Regression: 기본 개념 소개
 * Lec 6-2: Softmax classifier 의 cost함수
 * Lab 06-1: TensorFlow로 Softmax Classification의 구현하기
