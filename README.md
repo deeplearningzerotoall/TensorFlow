@@ -11,6 +11,12 @@ Deep Learning Zero to All - TensorFlow
 
 현재는 Tensorflow 1.12(stable)를 기반으로 작성했으며 Tensorflow 2.0이 출시되는 대로 추후 반영할 예정입니다.
 
+
+## Install Requirements
+```bash
+pip install -r requirements.txt
+```
+
 ------------------------------------
 
 ### 목차
