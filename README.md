@@ -95,6 +95,6 @@ We always welcome your comments and pull requests.
 * 이진원 (https://github.com/jwlee-ml)
 * 오상준 (https://github.com/juneoh)
 * 네이버 커넥트재단 : 이효은, 장지수, 임우담
-* 그리고 여러분들.
+* 그리고 여러분들!
 
 
