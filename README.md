@@ -86,7 +86,10 @@ We always welcome your comments and pull requests.
 
 ### 함께 만든 이들
 
+Main Instructor
 * Prof. Kim (https://github.com/hunkim)
+
+Main Creator
 * 김보섭 (https://github.com/aisolab)
 * 김수상 (https://github.com/healess)
 * 김준호 (https://github.com/taki0112)
@@ -94,7 +97,9 @@ We always welcome your comments and pull requests.
 * 이승준 (https://github.com/FinanceData)
 * 이진원 (https://github.com/jwlee-ml)
 * 오상준 (https://github.com/juneoh)
+
+Support
 * 네이버 커넥트재단 : 이효은, 장지수, 임우담
-* 그리고 여러분들!
+
 
 
