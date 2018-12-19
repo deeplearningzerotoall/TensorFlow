@@ -64,7 +64,7 @@ Deep Learning Zero to All - TensorFlow
 
 --------------------------
 
-### 함께 만든이들
+### 함께 만든 이들
 
 * 김보섭 (https://github.com/aisolab)
 * 김수상 (https://github.com/healess)
