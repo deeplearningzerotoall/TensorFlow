@@ -61,3 +61,17 @@ Deep Learning Zero to All - TensorFlow
 * Lab 12-5: many to many variable bi-directional (simpled po-s-tagger training, bi-directional)
 * Lab 12-6: seq to seq (simple neural machine translation)
 * Lab 12-7: seq to seq with attention (simple neural machine translation, attention)
+
+--------------------------
+
+### 만든이들
+
+* 김보섭 (https://github.com/aisolab)
+* 김수상 (https://github.com/healess)
+* 김준호 (https://github.com/taki0112)
+* 신성진 (https://github.com/aiscientist)
+* 이승준 (https://github.com/FinanceData)
+* 이진원 (https://github.com/jwlee-ml)
+* 네이버 커넥트재단 : 이효은, 장지수, 임우담
+
+
