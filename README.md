@@ -96,6 +96,8 @@ Main Creator
 * 신성진 (https://github.com/aiscientist)
 * 이승준 (https://github.com/FinanceData)
 * 이진원 (https://github.com/jwlee-ml)
+
+Docker Developer
 * 오상준 (https://github.com/juneoh)
 
 Support
