@@ -119,7 +119,7 @@ with tf.Session() as sess :
     checkpoint_dir = 'checkpoints'
     logs_dir = 'logs'
 
-    model_dir = 'softmax'
+    model_dir = 'nn_softmax'
     model_name = 'dense'
 
     checkpoint_dir = os.path.join(checkpoint_dir, model_dir)
