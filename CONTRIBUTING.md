@@ -3,22 +3,20 @@
 ## Precheck steps : 사전확인
 
 * 작업을 시작하기 전에 먼저 이슈를 남겨 두세요. 왜냐면
-
   * 당신이 무엇을 하고 있는지 사람들에게 알리는 데 도움이 됩니다.
   * 문제는 이 Repo와 무관할 수 있습니다.
-  * It could be our intention to keep the code in that way (for [KISS](https://en.wikipedia.org/wiki/KISS_principle))
-* You should know how to use git
-  * If not, please google "how to use git." and read through them before you do anything. It's a mandatory skill to survive as a developer
-  * Try [git tutorial](https://try.github.io/levels/1/challenges/1)
+  * 그런 방식으로 코드를 유지하는 게 우리의 의도일 수도 있습니다. ([KISS](https://en.wikipedia.org/wiki/KISS_principle))
+* 여러분은 git을 어떻게 사용하는지 알아야합니다.
+  * 그렇지 않다면, "git 사용 방법"을 검색한 후, 무언가를 하기 전에 그것들을 읽어 보세요. 개발자로서 살아남기 위해서는 필수적인 기술입니다.
+  * [Git tutorial](https://try.github.io/levels/1/challenges/1)을 참고하세요. 
 
 ## Contribution guidelines
 
-This document will guide you through the contribution process.
+이 문서는 Contribution 프로세스를 안내합니다.
 
 ### Step 1: Fork
 
-Fork the project [on GitHub](https://github.com/hunkim/DeepLearningZeroToAll.git) by pressing the "fork" button.
-This step will copy this repository to your account so that you can start working on.
+Fork 버튼을 눌러 [GitHub](https://github.com/hunkim/DeepLearningZeroToAll.git)에 프로젝트를 Fork하세요. 이 단계는 작업을 시작할 수 있게 당신의 계정에 복사하게 됩니다.
 
 ### Step 2: Download to a local computer
 
