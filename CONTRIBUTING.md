@@ -18,22 +18,22 @@
 
 Fork 버튼을 눌러 [GitHub](https://github.com/hunkim/DeepLearningZeroToAll.git)에 프로젝트를 Fork하세요. 이 단계는 작업을 시작할 수 있게 당신의 계정에 복사하게 됩니다.
 
-### Step 2: Download to a local computer
+### Step 2: Local computer에 다운로드하세요
 
 
 ```bash
-$ git clone https://github.com/`YOUR_GITHUB_NAME`/DeepLearningZeroToAll.git
-$ cd DeepLearningZeroToAll
+$ git clone https://github.com/`YOUR_GITHUB_NAME`/deeplearningzerotoall/TensorFlow.git 
+$ cd deeplearningzerotoall/TensorFlow
 ```
 ### Step 3: Setup an upstream
 
-It's always a good idea to set up a link to this repo so that you can pull easily if there were changes
+변경 사항이 있을 경우, 쉽게 pull할 수 있도록 이 repo에 대한 링크를 설정해야 합니다.
 
 ```bash
 $ git remote add upstream https://github.com/hunkim/DeepLearningZeroToAll.git
 ```
 
-If there were updates in this repository, you can now keep your local copy and your repository updated
+저장소에 업데이트가 있는 경우 로컬 복사본과 repository 를 업데이트할 수 있습니다.
 
 ```bash
 $ git pull upstream master && git push origin master
@@ -41,16 +41,18 @@ $ git pull upstream master && git push origin master
 
 ### Step 4: Make a branch
 
-You don't want to directly modify the master branch because the master branch keeps changing by merging PRs, etc.
+Master branch는 Pull Request들을 계속 병합되고 수정되기 때문에 Master branch를 직접 수정하지는 않는 게 좋습니다. 
 
-Also remember to give a meaningful name!
+그리고 의미 있는 이름으로 브랜치를 만드는 걸 잊지마세요!
+
 
 Example: 
 ```bash
 $ git checkout -b hotfix/lab10 -t origin/master
 ```
 
-After making a new branch, feel free to modify the codes now!
+새로운 Branch를 만든 후에 자유롭게 코드를 수정하세요!
+
 
 **Note: don't get tempted to fix other things that are not related to your issue.**
 Your commit should be in logical blocks! If it's a different problem, you have to create a separate issue.
@@ -58,21 +60,22 @@ Your commit should be in logical blocks! If it's a different problem, you have t
 
 ### Step 5: Commit
 
-If you have not set up, please set up your email/username 
+이메일/사용자 이름을 설정하세요.
+
 ```bash
 $ git config --global user.name "Sung Kim"
 $ git config --global user.email "sungkim@email.com"
 ```
 
-then commit:
+그리고 필요한 파일을 추가 후, commit 하세요.
 ```bash
 $ git add my/changed/files
 $ git commit
 ```
 
 Notes
-* Write a clear commit message!
-* Example:
+* 다른 사람들도 알아 볼 수 있게 명확한 Commit 메시지를 쓰세요!
+* 예시:
 ```text
 Short (50 chars or less) summary of changes
 
@@ -93,8 +96,7 @@ Further paragraphs come after blank lines.
 
 ### Step 6: (Optional) Rebase your branch
 
-If your fix is taking longer than usual, it's likely that your repo is outdated.  
-Sync your repo to the latest:
+만약 수정이 평소보다 더 오래 걸린다면, 레포지토리는 옛날 버전일 가능성이 있습니다. 항상 레포지토리를 최신 버전으로 동기화하세요.
 ```bash
 $ git fetch upstream
 $ git rebase upstream/master
@@ -102,9 +104,9 @@ $ git rebase upstream/master
 
 ### Step 7: Push
 
-Before pushing to YOUR REPO, make sure you run `autopep8`!
+여러분의 repo를 push하기전에 ‘Autopep8’을 실행해주세요!
 
-Please follow PEP8 styles.  The only exception is `E501`(max-line-char limit)  
+E501(최대 문자 줄 제한)을 제외한 모든 PEP8형식을 따라주세요. 
 **Remember: Readability > everything**
 
 Example:
@@ -116,14 +118,16 @@ $ git push -u origin hotfix/lab10
 
 
 ### Step 8: Creating the PR
-Now, if you open a browser and open this repo.  
-You will see the big green button saying "compare & pull request."
-
-* Please ensure you write a good title.
-* Don't just write filenames you modified.
-* **Explain what you did and why you did.**
-* Add a relevant issue number as well.
+이제 여러분의 브라우저와 repo를 열면
+  
+"compare & pull request."라는 초록색 버튼을 보실 수 있습니다.
 
 
-Congratulations ! Your PR will be reviewed by collaborators.  
-Please check your PR pass the CI test as well.
+* 좋은 제목을 작성하세요.
+* 여러분이 수정한 파일 이름을 쓰지마세요.
+* **여러분이 했던 것과 여러분이 왜 했었는지를 설명해주세요.**
+* 관련된 issue번호도 추가해주세요.
+
+
+축하합니다! 여러분의 PR은 collaborator들에게 검토받을겁니다.  
+여러분의 PR이 CI test도 통과했는지 체크하세요.
