@@ -6,8 +6,8 @@
   * 당신이 무엇을 하고 있는지 사람들에게 알리는 데 도움이 됩니다.
   * 문제는 이 Repo와 무관할 수 있습니다.
   * 그런 방식으로 코드를 유지하는 게 우리의 의도일 수도 있습니다. ([KISS](https://en.wikipedia.org/wiki/KISS_principle))
-* 여러분은 git을 어떻게 사용하는지 알아야합니다.
-  * 그렇지 않다면, "git 사용 방법"을 검색한 후, 무언가를 하기 전에 그것들을 읽어 보세요. 개발자로서 살아남기 위해서는 필수적인 기술입니다.
+* 여러분은 Git을 어떻게 사용하는지 알아야합니다.
+  * 그렇지 않다면, "Git 사용 방법"을 검색한 후, 무언가를 하기 전에 그것들을 읽어 보세요. 개발자로서 살아남기 위해서는 필수적인 기술입니다.
   * [Git tutorial](https://try.github.io/levels/1/challenges/1)을 참고하세요. 
 
 ## Contribution guidelines
@@ -27,7 +27,7 @@ $ cd deeplearningzerotoall/TensorFlow
 ```
 ### Step 3: Setup an upstream
 
-변경 사항이 있을 경우, 쉽게 pull할 수 있도록 이 repo에 대한 링크를 설정해야 합니다.
+변경 사항이 있을 경우, 쉽게 Pull할 수 있도록 이 Repo에 대한 링크를 설정해야 합니다.
 
 ```bash
 $ git remote add upstream https://github.com/hunkim/DeepLearningZeroToAll.git
@@ -67,7 +67,7 @@ $ git config --global user.name "Sung Kim"
 $ git config --global user.email "sungkim@email.com"
 ```
 
-그리고 필요한 파일을 추가 후, commit 하세요.
+그리고 필요한 파일을 추가 후, Commit 하세요.
 ```bash
 $ git add my/changed/files
 $ git commit
@@ -131,5 +131,5 @@ $ git push -u origin hotfix/lab10
 * 관련된 issue번호도 추가해주세요.
 
 
-축하합니다! 여러분의 PR은 collaborator들에게 검토받을겁니다.  
-여러분의 PR이 CI test도 통과했는지 체크하세요.
+축하합니다! 여러분의 PR은 Collaborator들에게 검토받을겁니다.  
+여러분의 PR이 CI Test도 통과했는지 체크하세요.
