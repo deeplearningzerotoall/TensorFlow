@@ -43,7 +43,7 @@ $ git pull upstream master && git push origin master
 
 Master branch는 Pull Request들을 계속 병합되고 수정되기 때문에 Master branch를 직접 수정하지는 않는 게 좋습니다. 
 
-그리고 의미 있는 이름으로 브랜치를 만드는 걸 잊지마세요!
+그리고 의미 있는 이름으로 Branch를 만드는 걸 잊지마세요!
 
 
 Example: 
