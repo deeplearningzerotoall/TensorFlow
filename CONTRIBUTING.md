@@ -107,9 +107,10 @@ $ git rebase upstream/master
 여러분의 repo를 push하기전에 ‘Autopep8’을 실행해주세요!
 
 E501(최대 문자 줄 제한)을 제외한 모든 PEP8형식을 따라주세요. 
+
 **잊지마세요, 가독성이 최우선입니다!**
 
-Example:
+:
 
 ```bash
 $ autopep8 . -r -i --ignore E501
