@@ -75,6 +75,7 @@ $ git commit
 
 Notes
 * 다른 사람들도 알아 볼 수 있게 명확한 Commit 메시지를 쓰세요!
+
 * 예시:
 ```text
 Short (50 chars or less) summary of changes
