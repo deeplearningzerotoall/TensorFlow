@@ -46,13 +46,6 @@ def load_mnist() :
     train_labels = to_categorical(train_labels, 10) # [N,] -> [N, 10]
     test_labels = to_categorical(test_labels, 10) # [N,] -> [N, 10]
 
-    seed = 777
-    np.random.seed(seed)
-    np.random.shuffle(train_data)
-    np.random.seed(seed)
-    np.random.shuffle(train_labels)
-
-
     return train_data, train_labels, test_data, test_labels
 
 def classification_loss(logit, label) :
