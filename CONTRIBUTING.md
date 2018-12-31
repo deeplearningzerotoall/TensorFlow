@@ -3,8 +3,8 @@
 ## Precheck steps : 사전 확인
 
 * 작업을 시작하기 전에 먼저 이슈를 남겨 두세요. 왜냐면
-  * 당신이 무엇을 하고 있는지 사람들에게 알리는 데 도움이 됩니다.
-  * 문제는 이 Repo와 무관할 수 있습니다.
+  * 여러분이 무엇을 하고 있는지 사람들에게 알리는 데 도움이 됩니다.
+  * 제안하는 문제가 이 Repo와 무관할 수 있습니다.
   * 그런 방식으로 코드를 유지하는 게 우리의 의도일 수도 있습니다. ([KISS](https://en.wikipedia.org/wiki/KISS_principle))
 * 여러분은 Git을 어떻게 사용하는지 알아야합니다.
   * 그렇지 않다면, "Git 사용 방법"을 검색한 후, 무언가를 하기 전에 그것들을 읽어 보세요. 개발자로서 살아남기 위해서는 필수적인 기술입니다.
@@ -16,15 +16,15 @@
 
 ### Step 1: Fork
 
-Fork 버튼을 눌러 [GitHub](https://github.com/hunkim/DeepLearningZeroToAll.git)에 프로젝트를 Fork하세요. 이 단계는 작업을 시작할 수 있게 당신의 계정에 복사하게 됩니다.
+Fork 버튼을 눌러 [GitHub](https://github.com/hunkim/DeepLearningZeroToAll.git)에 프로젝트를 Fork하세요. 이 단계는 작업을 시작할 수 있게 여러분의 계정에 복사하게 됩니다.
 
 ### Step 2: Local computer에 다운로드하세요
-
 
 ```bash
 $ git clone https://github.com/`YOUR_GITHUB_NAME`/deeplearningzerotoall/TensorFlow.git 
 $ cd deeplearningzerotoall/TensorFlow
 ```
+
 ### Step 3: Setup an upstream
 
 변경 사항이 있을 경우, 쉽게 Pull할 수 있도록 이 Repo에 대한 링크를 설정해야 합니다.
@@ -53,10 +53,9 @@ $ git checkout -b hotfix/lab10 -t origin/master
 
 새로운 Branch를 만든 후에 자유롭게 코드를 수정하세요!
 
+**주의: 여러분 제안한 Issue와 관련이 없는 다른 것들을 고치고 마세요!**
 
-**Note: don't get tempted to fix other things that are not related to your issue.**
-Your commit should be in logical blocks! If it's a different problem, you have to create a separate issue.
-
+만약에 다른 문제가 있다면, 따로 이슈를 제안하시길 바랍니다. 
 
 ### Step 5: Commit
 
@@ -97,7 +96,7 @@ Further paragraphs come after blank lines.
 
 ### Step 6: (Optional) Rebase your branch
 
-만약 수정이 평소보다 더 오래 걸린다면, 레포지토리는 옛날 버전일 가능성이 있습니다. 항상 레포지토리를 최신 버전으로 동기화하세요.
+수정이 평소보다 더 오래 걸려서, 여러분의 레포지토리는 뒤쳐진 옛날 버전일 가능성이 높습니다. 항상 레포지토리를 최신 버전으로 동기화하세요.
 ```bash
 $ git fetch upstream
 $ git rebase upstream/master
@@ -120,16 +119,12 @@ $ git push -u origin hotfix/lab10
 
 
 ### Step 8: Creating the PR
-이제 여러분의 브라우저와 repo를 열면
-  
-"compare & pull request."라는 초록색 버튼을 보실 수 있습니다.
-
+이제 여러분의 브라우저와 repo를 열면 "compare & pull request."라는 초록색 버튼을 보실 수 있습니다.
 
 * 좋은 제목을 작성하세요.
-* 여러분이 수정한 파일 이름을 쓰지마세요.
+* 여러분이 수정한 파일 이름만 쓰지마시고 자세하게 설명해주세요.
 * **여러분이 했던 것과 여러분이 왜 했었는지를 설명해주세요.**
 * 관련된 issue번호도 추가해주세요.
-
 
 축하합니다! 여러분의 PR은 Collaborator들에게 검토받을겁니다.  
 여러분의 PR이 CI Test도 통과했는지 체크하세요.
