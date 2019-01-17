@@ -76,11 +76,10 @@ We always welcome your comments and pull requests.
 * Lab 12-0: RNN - Basics
 * Lab 12-1: many to one (word sentiment classification)
 * Lab 12-2: many to one stacked (sentence classification, stacked)
-* Lab 12-3: many to many fixed (hihello traning)
-* Lab 12-4: many to many variable (simple pos-tagger training)
-* Lab 12-5: many to many variable bi-directional (simpled po-s-tagger training, bi-directional)
-* Lab 12-6: seq to seq (simple neural machine translation)
-* Lab 12-7: seq to seq with attention (simple neural machine translation, attention)
+* Lab 12-3: many to many (simple pos-tagger training)
+* Lab 12-4: many to many bidirectional (simpled pos-tagger training, bidirectional)
+* Lab 12-5: seq to seq (simple neural machine translation)
+* Lab 12-6: seq to seq with attention (simple neural machine translation, attention)
 
 --------------------------
 
