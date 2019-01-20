@@ -113,8 +113,6 @@ test_dataset = tf.data.Dataset.from_tensor_slices((test_x, test_y)).\
 train_iterator = train_dataset.make_one_shot_iterator()
 test_iterator = test_dataset.make_one_shot_iterator()
 
-train_inputs, train_labels = train_iterator.get_next()
-test_inputs, test_labels = test_iterator.get_next()
 
 """ Model """
 network = Network_class(label_dim)
