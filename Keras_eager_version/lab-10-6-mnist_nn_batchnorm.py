@@ -65,13 +65,12 @@ class Network_class(tf.keras.Model):
 
         self.sequential_layers = []
         self.flatten = tf.keras.layers.Flatten() # [N, 28, 28, 1] -> [N, 784]
-        self.dropout = tf.keras.layers.Dropout(rate=0.3)
+        self.relu = tf.keras.activations.relu
+        self.batch_norm = tf.keras.layers.BatchNormalization()
 
         for i in range(4):
             # [N, 784] -> [N, 512] -> [N, 512] -> [N, 512] -> [N, 512]
             self.sequential_layers.append(tf.keras.layers.Dense(units=512, use_bias=True, kernel_initializer=weight_init))
-            self.sequential_layers.append(tf.keras.activations.relu)
-            self.sequential_layers.append(tf.keras.layers.BatchNormalization())
 
         # [N, 512] -> [N, 10]
         self.logit = tf.keras.layers.Dense(units=label_dim, use_bias=True, kernel_initializer=weight_init)
@@ -81,6 +80,8 @@ class Network_class(tf.keras.Model):
 
         for layer in self.sequential_layers:
             x = layer(x)
+            x = self.batch_norm(x)
+            x = self.relu(x)
 
         x = self.logit(x)
 
