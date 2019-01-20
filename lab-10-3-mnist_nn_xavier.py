@@ -2,8 +2,8 @@ import tensorflow as tf
 import tensorflow.contrib as tf_contrib
 import numpy as np
 import matplotlib.pyplot as plt
-from keras.utils import to_categorical
-from keras.datasets import mnist
+from tensorflow.keras.utils import to_categorical
+from tensorflow.keras.datasets import mnist
 from time import time
 import os
 
@@ -163,7 +163,7 @@ with tf.Session() as sess :
 
     if train_flag :
         """ Training phase """
-        for epoch in range(training_epochs) :
+        for epoch in range(start_epoch, training_epochs) :
             for idx in range(start_batch_index, training_iterations) :
 
                 # train

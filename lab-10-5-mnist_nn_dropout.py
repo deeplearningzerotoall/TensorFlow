@@ -2,8 +2,8 @@ import tensorflow as tf
 import tensorflow.contrib as tf_contrib
 import numpy as np
 import matplotlib.pyplot as plt
-from keras.utils import to_categorical
-from keras.datasets import mnist
+from tensorflow.keras.utils import to_categorical
+from tensorflow.keras.datasets import mnist
 from time import time
 import os
 
@@ -66,7 +66,7 @@ def network(x, dropout_rate=0, reuse=False) :
             x = tf.nn.relu(x)
             x = tf.layers.dropout(inputs=x, rate=dropout_rate)
 
-        # [N, 256] -> [N, 10]
+        # [N, 512] -> [N, 10]
         hypothesis = tf.layers.dense(inputs=x, units=10, use_bias=True, kernel_initializer=xavier, name='fully_connected_logit')
 
         return hypothesis # hypothesis = logit
@@ -165,7 +165,7 @@ with tf.Session() as sess :
 
     if train_flag :
         """ Training phase """
-        for epoch in range(training_epochs) :
+        for epoch in range(start_epoch, training_epochs) :
             for idx in range(start_batch_index, training_iterations) :
 
                 train_feed_dict = {
