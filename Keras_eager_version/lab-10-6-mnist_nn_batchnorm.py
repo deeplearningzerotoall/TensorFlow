@@ -79,9 +79,9 @@ class Network_class(tf.keras.Model):
     def call(self, x, training=True, mask=None):
         x = self.flatten(x)
 
-        for i in range(4) :
-            x = self.dense_layers[i](x)
-            x = self.batch_norm_layers[i](x, training=training)
+        for dense, batch_norm in zip(self.dense_layers, self.batch_norm_layers) :
+            x = dense(x)
+            x = batch_norm(x, training=training)
             x = self.relu(x)
 
         x = self.logit(x)
