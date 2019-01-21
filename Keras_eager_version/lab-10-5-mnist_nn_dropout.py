@@ -68,9 +68,10 @@ class Network_class(tf.keras.Model):
         self.relu = tf.keras.activations.relu
         self.dropout = tf.keras.layers.Dropout(rate=0.3)
 
+        dim = [512, 256, 128, 64]
         for i in range(4):
             # [N, 784] -> [N, 512] -> [N, 512] -> [N, 512] -> [N, 512]
-            self.sequential_layers.append(tf.keras.layers.Dense(units=512, use_bias=True, kernel_initializer=weight_init))
+            self.sequential_layers.append(tf.keras.layers.Dense(units=dim[i], use_bias=True, kernel_initializer=weight_init))
 
         # [N, 512] -> [N, 10]
         self.logit = tf.keras.layers.Dense(units=label_dim, use_bias=True, kernel_initializer=weight_init)
@@ -83,7 +84,7 @@ class Network_class(tf.keras.Model):
             x = self.relu(x)
 
             if training :
-                x = self.dropout(x)
+                x = self.dropout(x, training=training)
 
         x = self.logit(x)
 

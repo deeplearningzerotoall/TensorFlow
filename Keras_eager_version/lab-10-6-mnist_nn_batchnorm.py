@@ -44,8 +44,8 @@ def load_mnist():
     return train_data, train_labels, test_data, test_labels
 
 
-def loss_fn(model, x, label):
-    logit = model(x)
+def loss_fn(model, x, label, training=True):
+    logit = model(x, training=training)
     loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(labels=label, logits=logit))
     accuracy = accuracy_fn(logit, label)
 
@@ -63,24 +63,25 @@ class Network_class(tf.keras.Model):
         super(Network_class, self).__init__()
         weight_init = tf.keras.initializers.glorot_uniform()
 
-        self.sequential_layers = []
+        self.dense_layers = []
+        self.batch_norm_layers = []
         self.flatten = tf.keras.layers.Flatten() # [N, 28, 28, 1] -> [N, 784]
         self.relu = tf.keras.activations.relu
-        self.batch_norm = tf.keras.layers.BatchNormalization()
 
         for i in range(4):
             # [N, 784] -> [N, 512] -> [N, 512] -> [N, 512] -> [N, 512]
-            self.sequential_layers.append(tf.keras.layers.Dense(units=512, use_bias=True, kernel_initializer=weight_init))
+            self.dense_layers.append(tf.keras.layers.Dense(units=512, use_bias=True, kernel_initializer=weight_init))
+            self.batch_norm_layers.append(tf.keras.layers.BatchNormalization())
 
         # [N, 512] -> [N, 10]
         self.logit = tf.keras.layers.Dense(units=label_dim, use_bias=True, kernel_initializer=weight_init)
 
-    def call(self, x, training=None, mask=None):
+    def call(self, x, training=True, mask=None):
         x = self.flatten(x)
 
-        for layer in self.sequential_layers:
-            x = layer(x)
-            x = self.batch_norm(x)
+        for i in range(4) :
+            x = self.dense_layers[i](x)
+            x = self.batch_norm_layers[i](x, training=training)
             x = self.relu(x)
 
         x = self.logit(x)
@@ -169,7 +170,7 @@ if train_flag:
                     train_loss, train_accuracy = loss_fn(network, train_input, train_label)
 
                 test_input, test_label = test_iterator.get_next()
-                _, test_accuracy = loss_fn(network, test_input, test_label)
+                _, test_accuracy = loss_fn(network, test_input, test_label, training=False)
 
                 grads = tape.gradient(target=train_loss, sources=network.variables)
                 optimizer.apply_gradients(grads_and_vars=zip(grads, network.variables), global_step=global_step)
