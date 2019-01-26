@@ -93,7 +93,7 @@ img_size = 28
 c_dim = 1
 label_dim = 10
 
-train_flag = True
+train_flag = False
 
 """ Graph Input using Dataset API """
 train_dataset = tf.data.Dataset.from_tensor_slices((train_x, train_y)).\
@@ -168,15 +168,20 @@ if train_flag :
                 tf.contrib.summary.scalar(name='train_accuracy', tensor=train_accuracy)
                 tf.contrib.summary.scalar(name='test_accuracy', tensor=test_accuracy)
 
-                print("Epoch: [%2d] [%5d/%5d] time: %4.4f, train_loss: %.8f, train_accuracy: %.2f, test_Accuracy: %.2f" \
+                print("Epoch: [%2d] [%5d/%5d] time: %4.4f, train_loss: %.8f, train_accuracy: %.4f, test_Accuracy: %.4f" \
                       % (epoch, idx, training_iterations, time() - start_time, train_loss, train_accuracy,
                          test_accuracy))
                 counter += 1
         checkpoint.save(file_prefix=checkpoint_prefix+'-{}'.format(counter))
+
+    test_input, test_label = test_iterator.get_next()
+    test_accuracy = accuracy_fn(network, test_input, test_label)
+
+    print("test_Accuracy: %.4f" % (test_accuracy))
 
 else :
     _, _ = load(network, checkpoint_dir)
     test_input, test_label = test_iterator.get_next()
     test_accuracy = accuracy_fn(network, test_input, test_label)
 
-    print("test_Accuracy: %.2f" % (test_accuracy))
+    print("test_Accuracy: %.4f" % (test_accuracy))

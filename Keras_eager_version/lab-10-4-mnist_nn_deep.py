@@ -157,7 +157,7 @@ if train_flag:
         print(" [!] Load failed...")
 
     with summary_writer.as_default(), tf.contrib.summary.always_record_summaries():  # for tensorboard
-        for epoch in range(start_epoch, training_epochs) :
+        for epoch in range(start_epoch, training_epochs):
             for idx in range(start_iteration, training_iterations):
                 train_input, train_label = train_iterator.get_next()
                 grads = grad(network, train_input, train_label)
@@ -173,15 +173,21 @@ if train_flag:
                 tf.contrib.summary.scalar(name='train_accuracy', tensor=train_accuracy)
                 tf.contrib.summary.scalar(name='test_accuracy', tensor=test_accuracy)
 
-                print("Epoch: [%2d] [%5d/%5d] time: %4.4f, train_loss: %.8f, train_accuracy: %.2f, test_Accuracy: %.2f" \
-                      % (epoch, idx, training_iterations, time() - start_time, train_loss, train_accuracy,
-                         test_accuracy))
+                print(
+                    "Epoch: [%2d] [%5d/%5d] time: %4.4f, train_loss: %.8f, train_accuracy: %.4f, test_Accuracy: %.4f" \
+                    % (epoch, idx, training_iterations, time() - start_time, train_loss, train_accuracy,
+                       test_accuracy))
                 counter += 1
-        checkpoint.save(file_prefix=checkpoint_prefix+'-{}'.format(counter))
+        checkpoint.save(file_prefix=checkpoint_prefix + '-{}'.format(counter))
+
+    test_input, test_label = test_iterator.get_next()
+    test_accuracy = accuracy_fn(network, test_input, test_label)
+
+    print("test_Accuracy: %.4f" % (test_accuracy))
 
 else:
     _, _ = load(network, checkpoint_dir)
     test_input, test_label = test_iterator.get_next()
     test_accuracy = accuracy_fn(network, test_input, test_label)
 
-    print("test_Accuracy: %.2f" % (test_accuracy))
+    print("test_Accuracy: %.4f" % (test_accuracy))
