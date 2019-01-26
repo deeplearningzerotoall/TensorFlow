@@ -75,7 +75,7 @@ class create_model(tf.keras.Model):
         for i in range(4):
             self.model.add(dense(512, weight_init))
             self.model.add(relu())
-            self.model.add(dropout(rate=0.3))
+            self.model.add(dropout(rate=0.5))
 
         self.model.add(dense(label_dim, weight_init))
 
