@@ -24,11 +24,11 @@ def load(model, checkpoint_dir):
         return False, 0
 
 
-def normalize(X_train, X_test):
-    X_train = X_train / 255.0
-    X_test = X_test / 255.0
+def normalize(train_data, test_data):
+    train_data = train_data.astype(np.float32) / 255.0
+    test_data = test_data.astype(np.float32) / 255.0
 
-    return X_train, X_test
+    return train_data, test_data
 
 
 def load_mnist():
@@ -44,50 +44,48 @@ def load_mnist():
     return train_data, train_labels, test_data, test_labels
 
 
-def loss_fn(model, x, label, training=True):
-    logit = model(x, training=training)
-    loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(labels=label, logits=logit))
-    accuracy = accuracy_fn(logit, label)
+def loss_fn(model, images, labels):
+    logits = model(images, training=True)
+    loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(logits=logits, labels=labels))
+    return loss
 
-    return loss, accuracy
+def grad(model, images, labels):
+    with tf.GradientTape() as tape:
+        loss = loss_fn(model, images, labels)
+    return tape.gradient(loss, model.variables)
 
-
-def accuracy_fn(logit, label):
-    prediction = tf.equal(tf.argmax(logit, -1), tf.argmax(label, -1))
+def accuracy_fn(model, images, labels):
+    logits = model(images, training=False)
+    prediction = tf.equal(tf.argmax(logits, -1), tf.argmax(labels, -1))
     accuracy = tf.reduce_mean(tf.cast(prediction, tf.float32))
     return accuracy
 
+def create_model(label_dim) :
+    weight_init = tf.keras.initializers.glorot_uniform()
 
-class Network_class(tf.keras.Model):
-    def __init__(self, label_dim):
-        super(Network_class, self).__init__()
-        weight_init = tf.keras.initializers.glorot_uniform()
+    model = tf.keras.Sequential()
+    model.add(flatten())
 
-        self.dense_layers = []
-        self.batch_norm_layers = []
-        self.flatten = tf.keras.layers.Flatten() # [N, 28, 28, 1] -> [N, 784]
-        self.relu = tf.keras.activations.relu
+    for i in range(4) :
+        model.add(dense(512, weight_init))
+        model.add(batch_norm())
+        model.add(relu())
 
-        for i in range(4):
-            # [N, 784] -> [N, 512] -> [N, 512] -> [N, 512] -> [N, 512]
-            self.dense_layers.append(tf.keras.layers.Dense(units=512, use_bias=True, kernel_initializer=weight_init))
-            self.batch_norm_layers.append(tf.keras.layers.BatchNormalization())
+    model.add(dense(label_dim, weight_init))
 
-        # [N, 512] -> [N, 10]
-        self.logit = tf.keras.layers.Dense(units=label_dim, use_bias=True, kernel_initializer=weight_init)
+    return model
 
-    def call(self, x, training=True, mask=None):
-        x = self.flatten(x)
+def flatten() :
+    return tf.keras.layers.Flatten()
 
-        for dense, batch_norm in zip(self.dense_layers, self.batch_norm_layers) :
-            x = dense(x)
-            x = batch_norm(x, training=training)
-            x = self.relu(x)
+def dense(label_dim, weight_init) :
+    return tf.keras.layers.Dense(units=label_dim, use_bias=True, kernel_initializer=weight_init)
 
-        x = self.logit(x)
+def relu() :
+    return tf.keras.layers.Activation(tf.keras.activations.relu)
 
-        return x
-
+def batch_norm() :
+    return tf.keras.layers.BatchNormalization()
 
 """ dataset """
 train_x, train_y, test_x, test_y = load_mnist()
@@ -123,7 +121,7 @@ test_iterator = test_dataset.make_one_shot_iterator()
 
 
 """ Model """
-network = Network_class(label_dim)
+network = create_model(label_dim)
 
 """ Training """
 optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate)
@@ -162,18 +160,17 @@ if train_flag:
         print(" [!] Load failed...")
 
     with summary_writer.as_default(), tf.contrib.summary.always_record_summaries():  # for tensorboard
-        for epoch in range(start_epoch, training_epochs):
+        for epoch in range(start_epoch, training_epochs) :
             for idx in range(start_iteration, training_iterations):
                 train_input, train_label = train_iterator.get_next()
+                grads = grad(network, train_input, train_label)
+                optimizer.apply_gradients(grads_and_vars=zip(grads, network.variables), global_step=global_step)
 
-                with tf.GradientTape() as tape:
-                    train_loss, train_accuracy = loss_fn(network, train_input, train_label)
+                train_loss = loss_fn(network, train_input, train_label)
+                train_accuracy = accuracy_fn(network, train_input, train_label)
 
                 test_input, test_label = test_iterator.get_next()
-                _, test_accuracy = loss_fn(network, test_input, test_label, training=False)
-
-                grads = tape.gradient(target=train_loss, sources=network.variables)
-                optimizer.apply_gradients(grads_and_vars=zip(grads, network.variables), global_step=global_step)
+                test_accuracy = accuracy_fn(network, test_input, test_label)
 
                 tf.contrib.summary.scalar(name='train_loss', tensor=train_loss)
                 tf.contrib.summary.scalar(name='train_accuracy', tensor=train_accuracy)
@@ -183,11 +180,11 @@ if train_flag:
                       % (epoch, idx, training_iterations, time() - start_time, train_loss, train_accuracy,
                          test_accuracy))
                 counter += 1
-        checkpoint.save(file_prefix=checkpoint_prefix + '-{}'.format(counter))
+        checkpoint.save(file_prefix=checkpoint_prefix+'-{}'.format(counter))
 
 else:
     _, _ = load(network, checkpoint_dir)
     test_input, test_label = test_iterator.get_next()
-    _, test_accuracy = loss_fn(network, test_input, test_label)
+    test_accuracy = accuracy_fn(network, test_input, test_label)
 
     print("test_Accuracy: %.2f" % (test_accuracy))
