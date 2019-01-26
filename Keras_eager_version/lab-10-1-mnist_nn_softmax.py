@@ -50,20 +50,26 @@ def grad(model, images, labels):
         loss = loss_fn(model, images, labels)
     return tape.gradient(loss, model.variables)
 
+class create_model(tf.keras.Model):
+    def __init__(self, label_dim):
+        super(create_model, self).__init__()
+        weight_init = tf.keras.initializers.RandomNormal()
+
+        self.model = tf.keras.Sequential()
+        self.model.add(flatten())
+        self.model.add(dense(label_dim, weight_init))
+
+    def call(self, x, training=None, mask=None):
+
+        x = self.model(x)
+
+        return x
+
 def accuracy_fn(model, images, labels):
     logits = model(images, training=False)
     prediction = tf.equal(tf.argmax(logits, -1), tf.argmax(labels, -1))
     accuracy = tf.reduce_mean(tf.cast(prediction, tf.float32))
     return accuracy
-
-def create_model(label_dim) :
-    weight_init = tf.keras.initializers.RandomNormal()
-
-    model = tf.keras.Sequential()
-    model.add(flatten())
-    model.add(dense(label_dim, weight_init))
-
-    return model
 
 def flatten() :
     return tf.keras.layers.Flatten()
@@ -167,11 +173,6 @@ if train_flag :
                        test_accuracy))
                 counter += 1
         checkpoint.save(file_prefix=checkpoint_prefix + '-{}'.format(counter))
-
-    test_input, test_label = test_iterator.get_next()
-    test_accuracy = accuracy_fn(network, test_input, test_label)
-
-    print("test_Accuracy: %.4f" % (test_accuracy))
 
 else:
     _, _ = load(network, checkpoint_dir)

@@ -60,19 +60,25 @@ def accuracy_fn(model, images, labels):
     accuracy = tf.reduce_mean(tf.cast(prediction, tf.float32))
     return accuracy
 
-def create_model(label_dim) :
-    weight_init = tf.keras.initializers.glorot_uniform()
+class create_model(tf.keras.Model):
+    def __init__(self, label_dim):
+        super(create_model, self).__init__()
+        weight_init = tf.keras.initializers.glorot_uniform()
 
-    model = tf.keras.Sequential()
-    model.add(flatten())
+        self.model = tf.keras.Sequential()
+        self.model.add(flatten())
 
-    for i in range(4) :
-        model.add(dense(512, weight_init))
-        model.add(relu())
+        for i in range(4):
+            self.model.add(dense(512, weight_init))
+            self.model.add(relu())
 
-    model.add(dense(label_dim, weight_init))
+        self.model.add(dense(label_dim, weight_init))
 
-    return model
+    def call(self, x, training=None, mask=None):
+
+        x = self.model(x)
+
+        return x
 
 def flatten() :
     return tf.keras.layers.Flatten()
@@ -179,11 +185,6 @@ if train_flag:
                        test_accuracy))
                 counter += 1
         checkpoint.save(file_prefix=checkpoint_prefix + '-{}'.format(counter))
-
-    test_input, test_label = test_iterator.get_next()
-    test_accuracy = accuracy_fn(network, test_input, test_label)
-
-    print("test_Accuracy: %.4f" % (test_accuracy))
 
 else:
     _, _ = load(network, checkpoint_dir)

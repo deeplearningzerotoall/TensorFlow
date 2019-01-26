@@ -56,19 +56,25 @@ def accuracy_fn(model, images, labels):
     accuracy = tf.reduce_mean(tf.cast(prediction, tf.float32))
     return accuracy
 
-def create_model(label_dim) :
-    weight_init = tf.keras.initializers.RandomNormal()
 
-    model = tf.keras.Sequential()
-    model.add(flatten())
+class create_model(tf.keras.Model):
+    def __init__(self, label_dim):
+        super(create_model, self).__init__()
+        weight_init = tf.keras.initializers.RandomNormal()
 
-    for i in range(2) :
-        model.add(dense(256, weight_init))
-        model.add(relu())
+        self.model = tf.keras.Sequential()
+        self.model.add(flatten())
 
-    model.add(dense(label_dim, weight_init))
+        for i in range(2):
+            self.model.add(dense(256, weight_init))
+            self.model.add(relu())
 
-    return model
+        self.model.add(dense(label_dim, weight_init))
+
+    def call(self, x, training=None, mask=None):
+        x = self.model(x)
+
+        return x
 
 def flatten() :
     return tf.keras.layers.Flatten()
@@ -93,7 +99,7 @@ img_size = 28
 c_dim = 1
 label_dim = 10
 
-train_flag = False
+train_flag = True
 
 """ Graph Input using Dataset API """
 train_dataset = tf.data.Dataset.from_tensor_slices((train_x, train_y)).\
@@ -173,11 +179,6 @@ if train_flag :
                          test_accuracy))
                 counter += 1
         checkpoint.save(file_prefix=checkpoint_prefix+'-{}'.format(counter))
-
-    test_input, test_label = test_iterator.get_next()
-    test_accuracy = accuracy_fn(network, test_input, test_label)
-
-    print("test_Accuracy: %.4f" % (test_accuracy))
 
 else :
     _, _ = load(network, checkpoint_dir)
