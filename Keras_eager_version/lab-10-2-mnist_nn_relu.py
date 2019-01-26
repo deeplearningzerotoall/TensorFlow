@@ -22,6 +22,11 @@ def load(model, checkpoint_dir):
         print(" [*] Failed to find a checkpoint")
         return False, 0
 
+def check_folder(dir):
+    if not os.path.exists(dir):
+        os.makedirs(dir)
+    return dir
+
 def normalize(train_data, test_data):
     train_data = train_data.astype(np.float32) / 255.0
     test_data = test_data.astype(np.float32) / 255.0
@@ -55,7 +60,6 @@ def accuracy_fn(model, images, labels):
     prediction = tf.equal(tf.argmax(logits, -1), tf.argmax(labels, -1))
     accuracy = tf.reduce_mean(tf.cast(prediction, tf.float32))
     return accuracy
-
 
 class create_model(tf.keras.Model):
     def __init__(self, label_dim):
@@ -99,7 +103,7 @@ img_size = 28
 c_dim = 1
 label_dim = 10
 
-train_flag = True
+train_flag = False
 
 """ Graph Input using Dataset API """
 train_dataset = tf.data.Dataset.from_tensor_slices((train_x, train_y)).\
@@ -130,6 +134,8 @@ logs_dir = 'logs'
 
 model_dir = 'nn_relu'
 
+checkpoint_dir = os.path.join(checkpoint_dir, model_dir)
+check_folder(checkpoint_dir)
 checkpoint_prefix = os.path.join(checkpoint_dir, model_dir)
 logs_dir = os.path.join(logs_dir, model_dir)
 

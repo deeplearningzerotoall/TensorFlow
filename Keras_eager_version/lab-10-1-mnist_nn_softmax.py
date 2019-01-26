@@ -22,6 +22,11 @@ def load(model, checkpoint_dir):
         print(" [*] Failed to find a checkpoint")
         return False, 0
 
+def check_folder(dir):
+    if not os.path.exists(dir):
+        os.makedirs(dir)
+    return dir
+
 def normalize(train_data, test_data):
     train_data = train_data.astype(np.float32) / 255.0
     test_data = test_data.astype(np.float32) / 255.0
@@ -57,6 +62,11 @@ class create_model(tf.keras.Model):
 
         self.model = tf.keras.Sequential()
         self.model.add(flatten())
+
+        for i in range(2):
+            self.model.add(dense(256, weight_init))
+            self.model.add(sigmoid())
+
         self.model.add(dense(label_dim, weight_init))
 
     def call(self, x, training=None, mask=None):
@@ -77,6 +87,8 @@ def flatten() :
 def dense(label_dim, weight_init) :
     return tf.keras.layers.Dense(units=label_dim, use_bias=True, kernel_initializer=weight_init)
 
+def sigmoid() :
+    return tf.keras.layers.Activation(tf.keras.activations.sigmoid)
 
 """ dataset """
 train_x, train_y, test_x, test_y = load_mnist()
@@ -123,6 +135,8 @@ logs_dir = 'logs'
 
 model_dir = 'nn_softmax'
 
+checkpoint_dir = os.path.join(checkpoint_dir, model_dir)
+check_folder(checkpoint_dir)
 checkpoint_prefix = os.path.join(checkpoint_dir, model_dir)
 logs_dir = os.path.join(logs_dir, model_dir)
 
