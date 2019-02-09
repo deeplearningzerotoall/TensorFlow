@@ -61,9 +61,9 @@ def accuracy_fn(model, images, labels):
     accuracy = tf.reduce_mean(tf.cast(prediction, tf.float32))
     return accuracy
 
-class create_model(tf.keras.Model):
+class create_model_class(tf.keras.Model):
     def __init__(self, label_dim):
-        super(create_model, self).__init__()
+        super(create_model_class, self).__init__()
         weight_init = tf.keras.initializers.RandomNormal()
 
         self.model = tf.keras.Sequential()
@@ -79,6 +79,20 @@ class create_model(tf.keras.Model):
         x = self.model(x)
 
         return x
+
+def create_model_function(label_dim) :
+    weight_init = tf.keras.initializers.RandomNormal()
+
+    model = tf.keras.Sequential()
+    model.add(flatten())
+
+    for i in range(2) :
+        model.add(dense(256, weight_init))
+        model.add(relu())
+
+    model.add(dense(label_dim, weight_init))
+
+    return model
 
 def flatten() :
     return tf.keras.layers.Flatten()
@@ -96,14 +110,14 @@ train_x, train_y, test_x, test_y = load_mnist()
 learning_rate = 0.001
 batch_size = 128
 
-training_epochs = 1
+training_epochs = 2
 training_iterations = len(train_x) // batch_size
 
 img_size = 28
 c_dim = 1
 label_dim = 10
 
-train_flag = False
+train_flag = True
 
 """ Graph Input using Dataset API """
 train_dataset = tf.data.Dataset.from_tensor_slices((train_x, train_y)).\
@@ -123,7 +137,8 @@ test_iterator = test_dataset.make_one_shot_iterator()
 
 
 """ Model """
-network = create_model(label_dim)
+network = create_model_function(label_dim)
+# network = create_model_class(label_dim)
 
 """ Training """
 optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate)
@@ -184,6 +199,7 @@ if train_flag :
                       % (epoch, idx, training_iterations, time() - start_time, train_loss, train_accuracy,
                          test_accuracy))
                 counter += 1
+
         checkpoint.save(file_prefix=checkpoint_prefix+'-{}'.format(counter))
 
 else :

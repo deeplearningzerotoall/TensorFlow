@@ -64,9 +64,9 @@ def accuracy_fn(model, images, labels):
     accuracy = tf.reduce_mean(tf.cast(prediction, tf.float32))
     return accuracy
 
-class create_model(tf.keras.Model):
+class create_model_class(tf.keras.Model):
     def __init__(self, label_dim):
-        super(create_model, self).__init__()
+        super(create_model_class, self).__init__()
         weight_init = tf.keras.initializers.glorot_uniform()
 
         self.model = tf.keras.Sequential()
@@ -83,6 +83,20 @@ class create_model(tf.keras.Model):
         x = self.model(x)
 
         return x
+
+def create_model_function(label_dim) :
+    weight_init = tf.keras.initializers.glorot_uniform()
+
+    model = tf.keras.Sequential()
+    model.add(flatten())
+
+    for i in range(4) :
+        model.add(dense(512, weight_init))
+        model.add(relu())
+
+    model.add(dense(label_dim, weight_init))
+
+    return model
 
 def flatten() :
     return tf.keras.layers.Flatten()
@@ -128,7 +142,7 @@ test_iterator = test_dataset.make_one_shot_iterator()
 
 
 """ Model """
-network = create_model(label_dim)
+network = create_model_function(label_dim)
 
 """ Training """
 optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate)
