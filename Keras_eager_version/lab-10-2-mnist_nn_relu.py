@@ -110,11 +110,9 @@ train_x, train_y, test_x, test_y = load_mnist()
 learning_rate = 0.001
 batch_size = 128
 
-training_epochs = 2
+training_epochs = 1
 training_iterations = len(train_x) // batch_size
 
-img_size = 28
-c_dim = 1
 label_dim = 10
 
 train_flag = True
