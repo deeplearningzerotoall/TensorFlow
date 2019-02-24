@@ -73,7 +73,7 @@ We always welcome your comments and pull requests.
 * Lab 11-2: MNIST 99% with CNN
 * Lab 11-3: CNN Class, Layers, Ensemble
 * Lec 12: NN의 꽃 RNN 이야기
-* Lab 12-0: RNN - Basics
+* Lab 12-0: rnn basics
 * Lab 12-1: many to one (word sentiment classification)
 * Lab 12-2: many to one stacked (sentence classification, stacked)
 * Lab 12-3: many to many (simple pos-tagger training)
