@@ -16,13 +16,13 @@
 
 ### Step 1: Fork
 
-Fork 버튼을 눌러 [GitHub](https://github.com/hunkim/DeepLearningZeroToAll.git)에 프로젝트를 Fork하세요. 이 단계는 작업을 시작할 수 있게 여러분의 계정에 복사하게 됩니다.
+Fork 버튼을 눌러 [GitHub](https://github.com/deeplearningzerotoall/TensorFlow.git)에 프로젝트를 Fork하세요. 이 단계는 작업을 시작할 수 있게 여러분의 계정에 복사하게 됩니다.
 
 ### Step 2: Local computer에 다운로드하세요
 
 ```bash
-$ git clone https://github.com/`YOUR_GITHUB_NAME`/deeplearningzerotoall/TensorFlow.git 
-$ cd deeplearningzerotoall/TensorFlow
+$ git clone https://github.com/`YOUR_GITHUB_NAME`/TensorFlow.git 
+$ cd TensorFlow
 ```
 
 ### Step 3: Setup an upstream
@@ -30,7 +30,7 @@ $ cd deeplearningzerotoall/TensorFlow
 변경 사항이 있을 경우, 쉽게 Pull할 수 있도록 이 Repo에 대한 링크를 설정해야 합니다.
 
 ```bash
-$ git remote add upstream https://github.com/hunkim/DeepLearningZeroToAll.git
+$ git remote add upstream https://github.com/deeplearningzerotoall/TensorFlow.git
 ```
 
 저장소에 업데이트가 있는 경우 로컬 복사본과 repository 를 업데이트할 수 있습니다.
