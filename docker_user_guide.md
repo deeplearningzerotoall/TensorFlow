@@ -14,7 +14,7 @@
 
 앞으로 이 IP 를 사용하여 도커 컨테이너와 소통을 하게 됩니다.
 
-[이미지]
+![이미지](figs/docker_ip.png)
 
 ### 도커 이미지 다운로드 받기
 
@@ -87,11 +87,15 @@ root@[고유번호]:/workspace#
 
 자신의 Github 계정으로 접속하시고, 아래 그림과 같이 오른쪽 상단에 있는 `Fork` 버튼을 누릅니다.
 
-![이미지]
+![이미지](figs/fork.png)
 
-`Fork` 가 완료되면 자신의 레포지토리(오른쪽 위 상단의 프로필 이미지 클릭후, Your repositories)에 가시면 본 github 으로부터 Fork 된 repository 가 생성되어 있습니다. 해당 레포지토리를 클릭하여 접속하시고, 초록색 버튼인 `Clone or download`를 눌러서 하단의 링크를 복사 혹은 기억해둡니다.
+`Fork` 가 완료되면 자신의 레포지토리(오른쪽 위 상단의 프로필 이미지 클릭후, Your repositories)에 가시면 본 github 으로부터 Fork 된 repository 가 생성되어 있습니다. 
 
-![이미지]
+![이미지](figs/fork_after.png)
+
+해당 레포지토리를 클릭하여 접속하시고, 초록색 버튼인 `Clone or download`를 눌러서 하단의 링크를 복사 혹은 기억해둡니다.
+
+![이미지](figs/clone.png)
 
 다시 도커 컨테이너 내부로 돌아와서 복사한 링크를 `git clone` 명령어와 함께 붙여넣거나 타이핑해줍니다.
 
@@ -118,13 +122,13 @@ root@[고유번호]:/workspace/TensorFlow# jupyter notebook --ip 0.0.0.0 --allow
 root@[고유번호]:/workspace/TensorFlow# sh run_jupyter_docker.sh
 ```
 
-`jupyter notebook` 처음 실행후 아래 이미지 처럼 긴 토큰이 있는데 해당 토큰을 복사해둡니다.
+`jupyter notebook` 처음 실행후 아래 이미지 처럼 도커 터미널에 긴 토큰이 생기는데 해당 토큰을 복사해둡니다.
 
-![이미지]
+![이미지](figs/jupyter_token.png)
 
 이제 인터넷 창에 제일 처음이 도커실행시 주어진 IP 주소를 이용해 `[IP주소]:8888` 를 입력합니다. 그러면 아래 화면이 등장합니다.
 
-![이미지]
+![이미지](figs/jupyter_allow_root.png)
 
 아까 복사해둔 토큰을 입력합니다. 처음 실행이라면 패스워드를 설정할 수도 있습니다. 다음 접속시 패스워드만 입력하면 되기 때문에 설정하는 것을 권장합니다.
 
