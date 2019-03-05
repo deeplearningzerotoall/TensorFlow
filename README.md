@@ -37,6 +37,7 @@ We always welcome your comments and pull requests.
 
 ### 목차
 * Lec 01: 기본적인 Machine Learning 의 용어와 개념 설명
+* Lab 01: (추가예정)
 * Lec 02: Simple Linear Regression
 * Lab 02: Simple Linear Regression 를 TensorFlow 로 구현하기
 * Lec 03: Linear Regression and How to minimize cost
@@ -47,6 +48,7 @@ We always welcome your comments and pull requests.
 * Lec 05-2: Logistic Regression/Classification 의 cost 함수, 최소화
 * Lab 05-3: Logistic Regression/Classification 를 TensorFlow 로 구현하기
 * Lec 06-1: Softmax Regression: 기본 개념소개
+* Lec 06-2: Softmax Classifier의 cost함수
 * Lab 06-1: Softmax classifier 를 TensorFlow 로 구현하기
 * Lab 06-2: Fancy Softmax classifier 를 TensorFlow 로 구현하기
 * Lec 07-1: Application & Tips: 학습률(Learning Rate)과 데이터 전처리(Data Preprocessing)
