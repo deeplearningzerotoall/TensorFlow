@@ -66,9 +66,16 @@ We always welcome your comments and pull requests.
 * Lab 10-2: Weight 초기화 잘해보자
 * Lab 10-3: Dropout
 * Lab 10-4: Batch Normalization
+* Lec 11-1: ConvNet의 Conv 레이어 만들기
+* Lec 11-2: ConvNet Max pooling 과 Full Network
+* Lec 11-3: ConvNet의 활용예
 * Lab 11-0: CNN Basic: Convolution
 * Lab 11-0: CNN Basic: Pooling
-* Lab 11-1: CNN with MNIST Dataset
+* Lab 11-1: mnist cnn keras sequential eager
+* Lab 11-2: mnist cnn keras functional eager
+* Lab-11-3: mnist cnn keras subclassing eager
+* Lab-11-4: mnist cnn keras ensemble eager
+* Lab-11-5: mnist cnn best keras eager
 * Lec 12: NN의 꽃 RNN 이야기
 * [Lab 12-0: rnn basics](https://nbviewer.jupyter.org/github/deeplearningzerotoall/TensorFlow/blob/master/lab-12-0-rnn-basics-keras-eager.ipynb)
 * [Lab 12-1: many to one (word sentiment classification)](https://nbviewer.jupyter.org/github/deeplearningzerotoall/TensorFlow/blob/master/lab-12-1-many-to-one-keras-eager.ipynb)
