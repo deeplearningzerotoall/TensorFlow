@@ -19,6 +19,12 @@ Deep Learning Zero to All - TensorFlow
 
 현재는 Tensorflow 1.12(stable)를 기반으로 작성했으며 Tensorflow 2.0이 출시되는 대로 추후 반영할 예정입니다.
 
+Tensorflow 공식 홈페이지 권장에 따라 Keras + Eager로 작성했으며 
+
+Session 버전은 code_session_version 
+
+Keras 버전은 other에서 확인하실 수 있습니다.
+
 
 ## Install Requirements
 
