@@ -21,10 +21,10 @@
 hub.docker 에서 도커 이미지를 받아서 컨테이너를 사용할 준비를 합니다. 
 
 ```
-$ docker pull deeplearningzerotoall/tensorflow
+$ docker pull deeplearningzerotoall/tensorflow:v1.12.0
 ```
 
-만약에 특별히 버전을 지정하고 싶으면 저희 [docker hub](https://hub.docker.com/r/deeplearningzerotoall/tensorflow) 에 접속하셔서 원하시는 버전을 확인합니다. 
+만약에 특별히 다른 버전을 지정하고 싶으면 저희 [docker hub](https://hub.docker.com/r/deeplearningzerotoall/tensorflow) 에 접속하셔서 원하시는 버전을 확인합니다. 
 
 예를 들어 `v1.12.0`을 사용하고 싶으면 뒤에 `tensorflow:v1.12.0` 으로 `docker pull` 명령어를 사용해주시면 됩니다. 
 
@@ -35,7 +35,6 @@ $ docker images
 REPOSITORY				TAG	...
 hello-world				lastest	... 
 deeplearningzerotoall/tensorflow	lastest	...
-
 ```
 
 ### 도커 이미지로부터 컨테이너 실행하고 끄기
