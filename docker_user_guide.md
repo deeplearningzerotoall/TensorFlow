@@ -110,6 +110,13 @@ root@[고유번호]:/workspace# cd TensorFlow
 root@[고유번호]:/workspace/TensorFlow# 
 ```
 
+필수 패키지를 설치해줍니다.
+
+```
+root@[고유번호]:/workspace/TensorFlow# pip install --upgrade pip
+root@[고유번호]:/workspace/TensorFlow# pip install -r requirements.txt
+```
+
 거의 다왔습니다. 이제 `jupyter notebook` 만 실행하시면 됩니다.
 
 ```
