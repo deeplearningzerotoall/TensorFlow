@@ -18,7 +18,7 @@
 
 ### 도커 이미지 다운로드 받기
 
-hub.docker 에서 도커 이미지를 받아서 컨테이너를 사용할 준비를 합니다. 
+hub.docker 에서 도커 이미지를 받아서 컨테이너를 사용할 준비를 합니다. (로그인이 필요 할 수도 있습니다. https://hub.docker.com 에서 가입하세요!)
 
 ```
 $ docker pull deeplearningzerotoall/tensorflow:v1.12.0
