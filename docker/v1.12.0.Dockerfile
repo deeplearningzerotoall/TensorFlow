@@ -30,6 +30,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
          tzdata \
          locales \
          openssh-server \
+         g++ \
+         openjdk-8-jdk \
          xauth \
          rsync &&\
      rm -rf /var/lib/apt/lists/*
@@ -46,7 +48,7 @@ RUN conda install python=3.6 jupyter pip=9.0.1
 RUN conda clean -ya 
 RUN echo "export PATH=/opt/conda/bin:\$PATH" > /etc/profile.d/conda.sh
 
-RUN pip install scipy scikit-learn pandas cython visdom
+RUN pip install scipy scikit-learn pandas cython visdom matplotlib konlpy
 
 RUN pip install tensorflow==1.12.0
 
