@@ -93,14 +93,13 @@ We always welcome your comments and pull requests.
 ### PART 4: Recurrent Neural Network
 
 * Lec 12: NN의 꽃 RNN 이야기
-* [Lab 12-0: rnn basics](https://nbviewer.jupyter.org/github/deeplearningzerotoall/TensorFlow/blob/master/lab-12-0-rnn-basics-keras-eager.ipynb)
-* [Lab 12-1: many to one (word sentiment classification)](https://nbviewer.jupyter.org/github/deeplearningzerotoall/TensorFlow/blob/master/lab-12-1-many-to-one-keras-eager.ipynb)
-* [Lab 12-2: many to one stacked (sentence classification, stacked)](https://nbviewer.jupyter.org/github/deeplearningzerotoall/TensorFlow/blob/master/lab-12-2-many-to-one-stacking-keras-eager.ipynb)
-* [Lab 12-3: many to many (simple pos-tagger training)](https://nbviewer.jupyter.org/github/deeplearningzerotoall/TensorFlow/blob/master/lab-12-3-many-to-many-keras-eager.ipynb)
-* [Lab 12-4: many to many bidirectional (simpled pos-tagger training, bidirectional)](https://nbviewer.jupyter.org/github/deeplearningzerotoall/TensorFlow/blob/master/lab-12-4-many-to-many-bidirectional-keras-eager.ipynb)
-* [Lab 12-5: seq to seq (simple neural machine translation)](https://github.com/deeplearningzerotoall/TensorFlow/blob/master/lab-12-5-seq-to-seq-keras-eager.ipynb)
-* [Lab 12-6: seq to seq with attention (simple neural machine translation, attention)](https://github.com/deeplearningzerotoall/TensorFlow/blob/master/lab-12-6-seq-to-seq-with-attention-keras-eager.ipynb)
-
+* Lab 12-0: rnn basics
+* Lab 12-1: many to one (word sentiment classification)
+* Lab 12-2: many to one stacked (sentence classification, stacked)
+* Lab 12-3: many to many (simple pos-tagger training)
+* Lab 12-4: many to many bidirectional (simpled pos-tagger training, bidirectional)
+* Lab 12-5: seq to seq (simple neural machine translation)
+* Lab 12-6: seq to seq with attention (simple neural machine translation, attention)
 --------------------------
 
 ### 함께 만든 이들
