@@ -1,4 +1,4 @@
-# 모두를 위한 딥러닝 시즌2 : 모두가 만드는 모두를 위한 딥러닝
+# 모두를 위한 딥러닝 시즌 2 : 모두가 만드는 모두를 위한 딥러닝
 
 모두가 만드는 모두를 위한 딥러닝 시즌 2에 오신 여러분들 환영합니다. 
 
@@ -11,7 +11,7 @@
 
 ### Docker 사용자를 위한 안내
 
-동일한 실습 환경을 위해 docker 를 사용하실 분은  [docker_user_guide.md](docker_user_guide.md) 파일을 참고하세요! :)
+동일한 실습 환경을 위해 docker를 사용하실 분은  [docker_user_guide.md](docker_user_guide.md) 파일을 참고하세요! :)
 
 ### Install Requirements
 
@@ -35,7 +35,7 @@ Session 버전은 code_session_version / Keras 버전은 other에서 확인하�
 
 ## Contributions/Comments
 
-언제나 여러분들의 참여를 환영합니다. Comments나 Pull requests를 남겨주세요
+언제나 여러분들의 참여를 환영합니다. Comments나 Pull requests를 남겨주세요.
 
 We always welcome your comments and pull requests.
 
@@ -43,31 +43,31 @@ We always welcome your comments and pull requests.
 
 ### PART 1: Basic Machine Learning
 
-* Lec 01: 기본적인 Machine Learning 의 용어와 개념 설명
-* Lab 01: (추가예정)
+* Lec 01: 기본적인 Machine Learning의 용어와 개념 설명
+* Lab 01: (추가 예정)
 * Lec 02: Simple Linear Regression
-* Lab 02: Simple Linear Regression 를 TensorFlow 로 구현하기
+* Lab 02: Simple Linear Regression를 TensorFlow로 구현하기
 * Lec 03: Linear Regression and How to minimize cost
-* Lab 03: Linear Regression and How to minimize cost 를 TensorFlow 로 구현하기
+* Lab 03: Linear Regression and How to minimize cost를 TensorFlow로 구현하기
 * Lec 04: Multi-variable Linear Regression
-* Lab 04: Multi-variable Linear Regression 를 TensorFlow 로 구현하기
-* Lec 05-1: Logistic Regression/Classification 의 소개
-* Lec 05-2: Logistic Regression/Classification 의 cost 함수, 최소화
-* Lab 05-3: Logistic Regression/Classification 를 TensorFlow 로 구현하기
-* Lec 06-1: Softmax Regression: 기본 개념소개
-* Lec 06-2: Softmax Classifier의 cost함수
-* Lab 06-1: Softmax classifier 를 TensorFlow 로 구현하기
-* Lab 06-2: Fancy Softmax classifier 를 TensorFlow 로 구현하기
+* Lab 04: Multi-variable Linear Regression를 TensorFlow로 구현하기
+* Lec 05-1: Logistic Regression/Classification의 소개
+* Lec 05-2: Logistic Regression/Classification의 cost 함수, 최소화
+* Lab 05-3: Logistic Regression/Classification를 TensorFlow로 구현하기
+* Lec 06-1: Softmax Regression: 기본 개념 소개
+* Lec 06-2: Softmax Classifier의 cost 함수
+* Lab 06-1: Softmax classifier를 TensorFlow로 구현하기
+* Lab 06-2: Fancy Softmax classifier를 TensorFlow로 구현하기
 * Lab 07-1: Application & Tips: 학습률(Learning Rate)과 데이터 전처리(Data Preprocessing)
 * Lab 07-2-1: Application & Tips: 오버피팅(Overfitting) & Solutions
-* Lab 07-2-2: Application & Tips: 학습률, 전처리, 오버피팅을 TensorFlow 로 실습
+* Lab 07-2-2: Application & Tips: 학습률, 전처리, 오버피팅을 TensorFlow로 실습
 * Lab 07-3-1: Application & Tips: Data & Learning
-* Lab 07-3-2: Application & Tips: 다양한 Dataset 으로 실습
+* Lab 07-3-2: Application & Tips: 다양한 Dataset으로 실습
 
 ### PART 2: Basic Deep Learning
 
 * Lec 08-1: 딥러닝의 기본 개념: 시작과 XOR 문제
-* Lec 08-2: 딥러닝의 기본 개념2: Back-propagation 과 2006/2007 '딥'의 출현
+* Lec 08-2: 딥러닝의 기본 개념 2: Back-propagation 과 2006/2007 '딥'의 출현
 * Lec 09-1: XOR 문제 딥러닝으로 풀기
 * Lec 09-2: 딥넷트웍 학습 시키기 (backpropagation)
 * Lab 09-1: Neural Net for XOR
@@ -81,7 +81,7 @@ We always welcome your comments and pull requests.
 
 * Lec 11-1: ConvNet의 Conv 레이어 만들기
 * Lec 11-2: ConvNet Max pooling 과 Full Network
-* Lec 11-3: ConvNet의 활용예
+* Lec 11-3: ConvNet의 활용 예
 * Lab 11-0-1: CNN Basic: Convolution
 * Lab 11-0-2: CNN Basic: Pooling
 * Lab 11-1: mnist cnn keras sequential eager
