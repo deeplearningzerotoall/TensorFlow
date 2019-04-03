@@ -58,3 +58,5 @@ RUN rm -rf ~/.cache/pip
 ENV PYTHONUNBUFFERED=1
 RUN mkdir /workspace
 WORKDIR /workspace
+
+CMD ["jupyter", "notebook", "--allow-root", "--ip=0.0.0.0", "--NotebookApp.custom_display_url='http://localhost:8888'"]
