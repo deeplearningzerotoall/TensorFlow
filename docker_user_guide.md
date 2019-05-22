@@ -1,4 +1,4 @@
-# Docker User Guide
+﻿# Docker User Guide
 
 도커를 사용하시는 분들을 위해 작성하는 도커 사용법입니다.
 
@@ -10,7 +10,7 @@
 
 ### Docker 처음 실행
 
-도커 터미널 실행후 아래 그림에 있는 IP 를 잘 기억해두세요! 
+도커 터미널 실행 후 아래 그림에 있는 IP 를 잘 기억해두세요! 
 
 앞으로 이 IP 를 사용하여 도커 컨테이너와 소통을 하게 됩니다.
 
@@ -40,7 +40,7 @@ deeplearningzerotoall/tensorflow	latest	...
 도커 이미지로부터 컨테이너를 생성하고 실행합니다. 이때 `--name` 뒤에 원하는 이름을 설정할 수 있습니다. 이번 가이드에서는 `tf` 로 하겠습니다.
 
 ```
-$ docker run -i -t --name tf -p 8888:8888 -p 6006:6006 deeplearningzerotoall/tensorflow
+$ docker run -i -t --name tf -p 8888:8888 -p 6006:6006 deeplearningzerotoall/tensorflow /bin/bash
 ```
 
 이제 거의 다 왔습니다. 도커 컨테이너를 만들었고 root 계정으로 컨테이너 내부 쉘에 접속한 상태입니다.
@@ -60,10 +60,11 @@ root@[고유번호]:/workspace# exit
 ```
 $ docker ps -a
 ```
+현재 실행 중인 컨테이너만 확인하고 싶은 경우에는 `docker ps` 명령어를 이용해서 확인할 수 있습니다. 
 
 ### 도커 컨테이너 자유롭게 드나들기
 
-**주의**: `docker run` 명령어는 한번 만 실행하시면 됩니다. 종료된 컨테이너를 다시 실행하려면 아래와 같이 실행합니다.
+**주의**: `docker run` 명령어는 한 번 만 실행하시면 됩니다. 종료된 컨테이너를 다시 실행하려면 아래와 같이 실행합니다.
 
 ```
 $ docker start tf
